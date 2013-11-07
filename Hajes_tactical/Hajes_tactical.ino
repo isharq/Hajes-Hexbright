@@ -1,4 +1,9 @@
 /*
+Standard programme running on Haje's Hexbright. 
+It has 4 brightnesses - Top brightness, half, then super-dim. 
+Short duration before strobe press. 
+Strobe set to 15 Hz
+
 Copyright (c) 2013, "David Hilton" <dhiltonp@gmail.com>
 All rights reserved.
 
@@ -71,7 +76,7 @@ void loop() {
     static unsigned long flash_time = millis();
     if(flash_time+70<millis()) { // flash every 70 milliseconds
       flash_time = millis(); // reset flash_time
-      hb.set_light(MAX_LEVEL, 0, 20); // and pulse (going from max to min over 20 milliseconds)
+      hb.set_light(MAX_LEVEL, 0, 15); // and pulse (going from max to min over 20 milliseconds)
       // actually, because of the refresh rate, it's more like 'go from max brightness on high
       //  to max brightness on low to off.
     }
